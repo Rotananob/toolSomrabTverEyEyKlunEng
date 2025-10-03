@@ -17,9 +17,9 @@ class TestAutoReactor:
             self.driver.get(test_url)
             print("✅ បើក website តេស្តដោយជោគជ័យ!")
             
-            # សាកល្បងរក input fields
+        
             try:
-                # រកមើលទាំងអស់ possible input fields
+              
                 inputs = self.driver.find_elements(By.TAG_NAME, "input")
                 print(f"🔍 រកឃើញ {len(inputs)} input fields")
                 
@@ -33,22 +33,22 @@ class TestAutoReactor:
             return True
             
         except Exception as e:
-            print(f"❌ កំហុសក្នុងការបើក website: {e}")
+            print(f"❌ Erorr ក្នុងការបើក website: {e}")
             return False
     
     def test_react_to_elements(self):
         """Test reactions លើ elements ផ្សេងៗ"""
         try:
-            # សាកល្បងចុច buttons ផ្សេងៗ
+            
             buttons = self.driver.find_elements(By.TAG_NAME, "button")
             print(f"🔘 រកឃើញ {len(buttons)} buttons")
             
-            for i, button in enumerate(buttons[:3]):  # សាកល្បងត្រឹម 3 buttonsសិន 
+            for i, button in enumerate(buttons[:3]):  # សាកត្រឹម 3 buttonsសិន 
                 try:
                     button_text = button.text or button.get_attribute("innerHTML")
                     print(f"Button {i+1}: {button_text[:50]}...")
                     
-                    # សាកល្បងចុចឲ button
+                    
                     button.click()
                     print(f"✅ ចុច​បាន {i+1} ដោយជោគជ័យ!")
                     time.sleep(1)
@@ -79,10 +79,10 @@ if __name__ == "__main__":
     bot = TestAutoReactor()
     
     try:
-        #  សាកលើ website តេស្ត
+     
         test_websites = [
             "https://httpbin.org/forms/post",  # Website តេស្ត
-            "https://example.com",             # Website តេស្តសាមញ្ញ
+            "https://example.com",             # Website តេស្តតូចៗ tomada tomada
             "http://localhost:8000"           # Local website (បើមាន)
         ]
         
@@ -93,10 +93,10 @@ if __name__ == "__main__":
             success = bot.test_login(website)
             
             if success:
-                # រង់ចាំ website load
+    
                 time.sleep(3)
                 
-                # សាកល្បង interactions
+                
                 bot.test_react_to_elements()
                 
                 # ថត screenshot
