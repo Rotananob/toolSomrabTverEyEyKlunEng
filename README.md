@@ -1,4 +1,4 @@
-# toolSomrabTverEyEyKlunEngអត់ហើានសរសេរអង់គ្លេសខ្លាចbotចាប់
+# toolSomrabTverEyEyKlunEngអត់ហ៊ានសរសេរអង់គ្លេសខ្លាចbotចាប់
 របៀបrun 
 Step1 install Python packages open cmd write this command :(pip install selenium)
 Step2 ដំឡើង ChromeDriver Open cmd write this command : (pip install webdriver-manager)
